@@ -1,0 +1,90 @@
+{
+  "data_path": "D:\\file moi btl;\\mua_do_comments_labeled_final.csv",
+  "n_raw": 24491,
+  "n_after_cleaning": 24254,
+  "n_dev": 19403,
+  "n_test": 4851,
+  "n_test_toxic": 128,
+  "random_state": 42,
+  "cv": {
+    "n_splits": 5,
+    "n_repeats": 3
+  },
+  "best_config": {
+    "spec": {
+      "vec": "tfidf",
+      "algo": "LinearSVC",
+      "ngram": [
+        1,
+        2
+      ],
+      "C": 1.0,
+      "class_weight": null
+    },
+    "selection_criterion": "max mean PR-AUC, 5-fold CV on Dev",
+    "optimal_threshold": -0.4048915069201121,
+    "threshold_rule": "predict Toxic if decision_score >= optimal_threshold",
+    "threshold_per_repeat": [
+      -0.37181035039996346,
+      -0.406087334113143,
+      -0.4097626775342482
+    ]
+  },
+  "test_metrics": {
+    "accuracy": 0.9878375592661307,
+    "precision": 0.776,
+    "recall": 0.7578125,
+    "f1": 0.766798418972332,
+    "macro_f1": 0.8802771859916163,
+    "weighted_f1": 0.9877673806841769,
+    "pr_auc": 0.8404744088849728,
+    "roc_auc": 0.983202215223375,
+    "balanced_acc": 0.875942032341732,
+    "mcc": 0.7606116499330242,
+    "tn": 4695,
+    "fp": 28,
+    "fn": 31,
+    "tp": 97
+  },
+  "test_ci95": {
+    "accuracy": [
+      0.9843441249312906,
+      0.9905589491463477
+    ],
+    "precision": [
+      0.6953100627209139,
+      0.8402312531273837
+    ],
+    "recall": [
+      0.6767870437261757,
+      0.8238136771388623
+    ],
+    "f1": [
+      0.7026883266244969,
+      0.8251932278248068
+    ],
+    "macro_f1": [
+      0.8472880695564177,
+      0.9099464816609862
+    ],
+    "pr_auc": [
+      0.7813206634241121,
+      0.8952136207225666
+    ]
+  },
+  "latency": {
+    "n": 1000,
+    "single_ms_per_comment": 0.6543425000272691,
+    "single_throughput": 1528.2516418516693,
+    "batch_ms_per_comment": 0.11183780001010746,
+    "batch_throughput": 8941.520665728618
+  },
+  "versions": {
+    "python": "3.12.10",
+    "numpy": "2.5.2",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "joblib": "1.5.3"
+  }
+}

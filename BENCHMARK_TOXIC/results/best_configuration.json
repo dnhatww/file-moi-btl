@@ -1,0 +1,20 @@
+{
+  "spec": {
+    "vec": "tfidf",
+    "algo": "LinearSVC",
+    "ngram": [
+      1,
+      2
+    ],
+    "C": 1.0,
+    "class_weight": null
+  },
+  "selection_criterion": "max mean PR-AUC, 5-fold CV on Dev",
+  "optimal_threshold": -0.4048915069201121,
+  "threshold_rule": "predict Toxic if decision_score >= optimal_threshold",
+  "threshold_per_repeat": [
+    -0.37181035039996346,
+    -0.406087334113143,
+    -0.4097626775342482
+  ]
+}
